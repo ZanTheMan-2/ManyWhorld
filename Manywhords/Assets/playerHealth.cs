@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class playerHealth : MonoBehaviour
         currentHealth--;
         if (currentHealth <= 0)
         {
-            // switch to game over screen and reset
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -332,6 +332,7 @@
 "Assets/!MAIN!/Scripts/Player/playerCam.cs"
 "Assets/!MAIN!/Scripts/Player/pMovement.cs"
 "Assets/!MAIN!/Scripts/playerGun.cs"
+"Assets/LevelManager.cs"
 "Assets/playerHealth.cs"
 -langversion:9.0
 
