@@ -4644,3 +4644,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 43023.877145 seconds.
+  path: Assets/!MAIN!/Player.prefab
+  artifactKey: Guid(fdb489ad348814331b4fbbaed9978a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/!MAIN!/Player.prefab using Guid(fdb489ad348814331b4fbbaed9978a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4711a503ac2f06ff373088c3d5314546') in 1.500250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.720912 seconds.
+  path: Assets/!MAIN!/Scene/map01.unity
+  artifactKey: Guid(e80117be51fc34e25bde409c01d9f2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/!MAIN!/Scene/map01.unity using Guid(e80117be51fc34e25bde409c01d9f2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e0204ed5115e03657121f558000b0b6') in 0.018889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 64.134143 seconds.
+  path: Assets/!MAIN!/Materials/Map_1.png
+  artifactKey: Guid(66a2fe3fbcde54be280ec141660bd4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/!MAIN!/Materials/Map_1.png using Guid(66a2fe3fbcde54be280ec141660bd4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a920124b64493bd334404e161bbdbc') in 0.209802 seconds 
