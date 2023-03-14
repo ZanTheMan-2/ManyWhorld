@@ -4,39 +4,35 @@ using UnityEngine;
 
 public class sphereEnemy : MonoBehaviour
 {
-    public Transform target;
-    public GameObject bullet;
-    public Transform attackPoint;
+    public GameObject projectilePrefab;
+    public Transform shootPoint;
+    public float shootInterval = 2f;
+    public float shootSpeed = 10f;
 
-    bool ready = true;
+    public Transform target;
+    private float timeUntilNextShoot = 2f;
 
     void Update()
     {
+        timeUntilNextShoot -= Time.deltaTime;
+
         if (target != null)
         {
             transform.LookAt(target);
 
-            if (ready)
-            {
-                attack();
-                ready = false;
-            }
-                
+        }
+
+        if (timeUntilNextShoot <= 0f)
+        {
+            Shoot();
+            timeUntilNextShoot = shootInterval;
         }
     }
 
-  IEnumerator waiter()
+    void Shoot()
     {
-       
-        yield return new WaitForSeconds(3);
-        ready = true;
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.velocity = shootPoint.forward * shootSpeed;
     }
-    void attack()
-    {
-        Debug.Log("attack");
-        GameObject currentBullet = Instantiate(bullet);
-        currentBullet.transform.position = attackPoint.position;
-        StartCoroutine(waiter());
-    }
-    
 }

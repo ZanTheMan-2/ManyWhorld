@@ -36,7 +36,7 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "editor.toolbarIconGUI",
-                "value": "{\"m_Value\":false}"
+                "value": "{\"m_Value\":true}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -141,7 +141,11 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize",
+<<<<<<< HEAD
+                "value": "{\"m_Value\":{\"x\":-6.517376899719238,\"y\":0.003568887710571289,\"z\":-6.437992095947266}}"
+=======
                 "value": "{\"m_Value\":{\"x\":-65.59602355957031,\"y\":13.17292594909668,\"z\":52.90261459350586}}"
+>>>>>>> parent of 3b5880b4 (failed making ai)
             },
             {
                 "type": "UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",

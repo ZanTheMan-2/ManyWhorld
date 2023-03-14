@@ -4,57 +4,25 @@ using UnityEngine;
 
 public class sphereBullet : MonoBehaviour
 {
-    public Rigidbody Rigid;
+    public int damageAmount = 10;
 
-    public Transform target;
-    public int speed;
+    public AudioSource audioSource;
 
-    public int damageAmount = 10; // Amount of damage to deal to objects
-    public LayerMask damageableLayers;
-
-    private void Start()
+    void OnTriggerEnter(Collider collision)
     {
-        this.gameObject.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += transform.forward * speed * Time.deltaTime;
-
-        if (target != null)
+        this.gameObject.SetActive(false);
         {
-            transform.LookAt(target);
 
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (damageableLayers == (damageableLayers | (1 << other.gameObject.layer)))
-        {
-            Health health = other.gameObject.GetComponent<Health>();
-
-            if (health != null)
+            if (collision.gameObject.tag == "Player")
             {
-                health.TakeDamage(damageAmount);
+
+                playerHealth healthScript = collision.gameObject.GetComponent<playerHealth>();
+                if (healthScript != null)
+                {
+                    healthScript.TakeDamage(damageAmount);
+                    audioSource.Play();
+                }
             }
-
-            Destroy(gameObject);
         }
-    }
-    void OnEnable()
-    {
-        Invoke("Destroy", 10f);
-    }
-
-    void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
-    void OnDisable()
-    {
-        CancelInvoke();
     }
 }

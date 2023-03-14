@@ -15,8 +15,7 @@ public class pMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundmask;
 
-    public GameObject jug;
-    public Transform attackPoint;
+ 
 
     Vector3 velocity;
     bool isGrounded;
@@ -24,11 +23,7 @@ public class pMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundmask);
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GameObject currentBullet = Instantiate(jug);
-            currentBullet.transform.position = attackPoint.position;
-        }
+       
            
 
         if (isGrounded && velocity.y < 0)

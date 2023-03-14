@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
 
-   
+    public TextMeshProUGUI healthText;
+
 
     private void Start()
     {

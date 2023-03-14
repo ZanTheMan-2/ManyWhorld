@@ -327,11 +327,16 @@
 "Assets/!MAIN!/Enemy/Shotgun enemy/Shotgun.cs"
 "Assets/!MAIN!/Enemy/sphereBullet.cs"
 "Assets/!MAIN!/Enemy/sphereEnemy.cs"
+"Assets/!MAIN!/Scripts/Enemycountter.cs"
+"Assets/!MAIN!/Scripts/gameManegar.cs"
 "Assets/!MAIN!/Scripts/Gun.cs"
 "Assets/!MAIN!/Scripts/Player/Health.cs"
 "Assets/!MAIN!/Scripts/Player/playerCam.cs"
 "Assets/!MAIN!/Scripts/Player/pMovement.cs"
 "Assets/!MAIN!/Scripts/playerGun.cs"
+"Assets/!MAIN!/Scripts/spikeDamage.cs"
+"Assets/!MAIN!/Scripts/spikeTrap.cs"
+"Assets/playerHealth.cs"
 -langversion:9.0
 
 /deterministic
