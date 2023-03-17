@@ -8,6 +8,6 @@ public class LevelManager : MonoBehaviour
 {
     public void restartGame()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("map");
     }
 }

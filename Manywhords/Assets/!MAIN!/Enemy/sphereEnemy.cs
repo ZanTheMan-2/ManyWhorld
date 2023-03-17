@@ -5,10 +5,7 @@ using UnityEngine;
 public class sphereEnemy : MonoBehaviour
 {
     public Transform target;
-    public GameObject bullet;
-    public Transform attackPoint;
-
-    bool ready = true;
+   
 
     void Update()
     {
@@ -16,27 +13,11 @@ public class sphereEnemy : MonoBehaviour
         {
             transform.LookAt(target);
 
-            if (ready)
-            {
-                attack();
-                ready = false;
-            }
+           
                 
         }
     }
 
-  IEnumerator waiter()
-    {
-       
-        yield return new WaitForSeconds(3);
-        ready = true;
-    }
-    void attack()
-    {
-        Debug.Log("attack");
-        GameObject currentBullet = Instantiate(bullet);
-        currentBullet.transform.position = attackPoint.position;
-        StartCoroutine(waiter());
-    }
+ 
     
 }

@@ -4,57 +4,43 @@ using UnityEngine;
 
 public class sphereBullet : MonoBehaviour
 {
-    public Rigidbody Rigid;
+    public GameObject bulletPrefab; // Reference to the bullet prefab
+    public float bulletSpeed = 10f; // Speed of the bullet
+    public float fireRate = 2f; // Number of bullets per second
+    public float bulletLifetime = 3f; // Lifetime of the bullet
 
-    public Transform target;
-    public int speed;
+    private float fireTimer; // Timer to control the fire rate
 
-    public int damageAmount = 10; // Amount of damage to deal to objects
-    public LayerMask damageableLayers;
-
-    private void Start()
-    {
-        this.gameObject.SetActive(true);
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
-
-        if (target != null)
+        // Check if it's time to shoot
+        if (fireTimer <= 0f)
         {
-            transform.LookAt(target);
+            // Calculate the position to shoot at
+            Vector3 shootPosition = transform.position + transform.forward * 2f;
 
+            // Create the bullet
+            GameObject bullet = Instantiate(bulletPrefab, shootPosition, Quaternion.identity);
+
+            // Set the velocity of the bullet
+            bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+
+            // Destroy the bullet after its lifetime has expired
+            Destroy(bullet, bulletLifetime);
+
+            // Reset the fire timer
+            fireTimer = 1f / fireRate;
+        }
+        else
+        {
+            // Decrement the fire timer
+            fireTimer -= Time.deltaTime;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (damageableLayers == (damageableLayers | (1 << other.gameObject.layer)))
-        {
-            Health health = other.gameObject.GetComponent<Health>();
-
-            if (health != null)
-            {
-                health.TakeDamage(damageAmount);
-            }
-
-            Destroy(gameObject);
-        }
-    }
-    void OnEnable()
-    {
-        Invoke("Destroy", 10f);
-    }
-
-    void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
-    void OnDisable()
-    {
-        CancelInvoke();
+        // Destroy the bullet when it hits something
+        Destroy(collision.gameObject);
     }
 }
